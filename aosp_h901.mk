@@ -1,16 +1,14 @@
 $(call inherit-product, device/lge/h901/full_h901.mk)
 
-# Inherit some common AOSCP stuff.
-$(call inherit-product, vendor/aoscp/configs/common_full_phone.mk)
+# Inherit some common Lineage stuff.
+$(call inherit-product, vendor/aosp/common.mk)
+
+TARGET_BOOT_ANIMATION_RES := 1080
 
 # Overlays (inherit after vendor/cm to ensure we override it)
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
-PRODUCT_NAME := aoscp_h901
-PRODUCT_DEVICE := h901
-PRODUCT_BRAND := lge
-PRODUCT_MODEL := LG-H901
-PRODUCT_MANUFACTURER := LGE
+PRODUCT_NAME := aosp_h901
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_DEVICE="pplus" \
